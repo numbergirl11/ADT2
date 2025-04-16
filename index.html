@@ -177,12 +177,14 @@
     }
 
     function startDodgeGame() {
+      clearInterval(dodgeInterval);
       gameRunning = true;
       dodgeScore = 0;
       obstacleTop = 0;
       speed = 3;
       dodgeStart = Date.now();
       obstacleLeft = Math.random() * 90;
+      document.getElementById("gameOverMessage").style.display = "none";
       updateDodgeElements();
       dodgeInterval = setInterval(moveObstacle, 100);
     }
